@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package grpc;
+
+message Response{
+  string code = 1;
+}
+message Request {
+  int32 id = 1;
+  string name = 2;
+}
+
+service HealthCheckService{
+  rpc getStatus(Request) returns(Response);
+
+}
